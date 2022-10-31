@@ -1,0 +1,31 @@
+import numpy as np
+import pandas as pd
+
+df = pd.DataFrame([ [np.nan, 2, np.nan, 0], 
+                    [3, 4, np.nan, 1], 
+                    [np.nan, np.nan, np.nan, 5], 
+                    [np.nan, 3, np.nan, 4],
+                    [np.nan, np.nan, np.nan, np.nan] ],
+                    columns=list('ABCD'))
+                    
+df.isnull().sum()                  #fill gap data
+
+pd.isna(df["A"])
+
+df.notna()
+
+df.fillna(df.mean())
+df.dropna(axis=0)
+df.dropna(how='all') 
+
+from sklearn.preprocessing import normalize
+data
+n1=normalize(data,norm='l1',axis=0)
+n2=normalize(data,norm='l2',axis=0)
+df=pd.DataFrame(data)
+
+
+scaler = MinMaxScaler()
+df.info()
+df = df.drop(['PassengerId','Name','Ticket'], axis=1)   
+df.head()
